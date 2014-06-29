@@ -1,0 +1,24 @@
+{
+  "name": "git-search-server",
+  "version": "0.0.0",
+  "description": "Server part of git-search",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FilipStenbeck/git-search"
+  },
+  "author": "Filip Stenbeck",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FilipStenbeck/git-search/issues"
+  },
+  "homepage": "https://github.com/FilipStenbeck/git-search",
+  "dependencies": {
+    "express": "~4.4.5",
+    "lodash": "~2.4.1",
+    "git-wrapper": "~0.1.1"
+  }
+}
