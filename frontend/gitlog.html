@@ -1,0 +1,48 @@
+<link rel="import" href="components/polymer/polymer.html">
+
+<polymer-element name="git-log" attributes="notitle">
+  <link rel="import" href="components/core-ajax/core-ajax.html">
+  <link rel="import" href="components/paper-input/paper-input.html">
+  <template>
+    <link rel="stylesheet" href="gitlog.css" />
+    <core-ajax
+    id="ajax"
+    auto
+    url="{{url}}"
+    params='{"alt":"json"}'
+    handleAs="json"
+    on-core-response="{{handleResponse}}"></core-ajax>
+
+    <paper-input id="query" on-change="{{onQueryChange}}" label="Query" floatingLabel=true></paper-input>
+
+      <template repeat="{{ result }}">
+        <ul>
+          <li> <strong>{{ message }}</strong> </li>
+          <li>author: {{ author }} </li>
+          <li>commit : {{ key }} </li>
+        </ul>
+      </template>
+  </template>
+
+  <script>
+    Polymer('git-log', {
+      url : '',
+      result : [],
+
+      ready: function() {
+        console.log("ready")
+      },
+
+      handleResponse: function (event) {
+        this.result = this.$.ajax.response;
+      },
+
+      onQueryChange: function() {
+        this.url = 'http://localhost:9999/search/' + this.$.query.value;
+      }
+
+    });
+
+  </script>
+
+</polymer-element>

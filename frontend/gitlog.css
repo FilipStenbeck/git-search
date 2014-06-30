@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  color: black;
+}
+
+ul {
+	background-color: #00bad2;
+	color: #fff;
+	fill: #fff;
+	/* height: 100px; */
+	z-index: 1;
+	box-shadow: rgba(0, 0, 0, 0.258824) 0px 2px 5px 0px;
+	list-style: none;
+	font-size: 1.1 em;
+}
